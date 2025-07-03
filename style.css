@@ -1,0 +1,131 @@
+body{
+    margin:0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Sans Unicode', sans-serif;
+    background: black;
+    color: white;
+}
+header{
+    padding:20px;
+    background: black;
+    text-align: center;
+}
+header input{
+    padding:10px;
+    width:60%;
+    max-width:400px;
+    font-size:1rem;
+    border-radius:5px;
+    border:none;
+    box-sizing:border-box;
+}
+
+.movie-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.movie-card{
+    background-color:black;
+    border-radius: 9px;
+    overflow:hidden;
+    cursor:pointer;
+}
+
+.movie-card:hover{
+    transform:scale(1.05);
+}
+
+.movie-card img{
+    width: 100%;
+    height:240px;
+    object-fit: cover;
+}
+
+#loadMoreBtn{
+    display:block;
+    margin:20px auto;
+    padding:10px 20px;
+    background: crimson;
+    color:white;
+    border:none;
+    border-radius: 6px;
+    cursor:pointer;
+}
+
+/* modal styling */
+.modal{
+    display:none;
+    position:fixed;
+    z-index: 1000;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:black;
+    overflow:auto;
+}
+
+.modal-content{
+    background-color:black;
+    margin: 5% auto;
+    padding:20px;
+    width:90%;
+    max-width: 600px;
+    color:white;
+    border-radius:10px;
+    position:relative;
+    box-sizing:border-box;
+}
+.close-btn{
+    position:absolute;
+    right:15px;
+    top:10px;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.modal-content img{
+    float:left;
+    width:180px;
+    margin-right:20px;
+    border-radius:5px;
+}
+
+#modalBody{overflow: hidden;}
+
+@media (max-width:900px){
+    .model-content{
+        max-width:95%;
+        padding:15px;
+    }
+    .model-content img{
+        width: 120px;
+        margin-right:12px;
+    }
+}
+@media (max-width:600px){
+    header input{
+        width:90%;
+        font-size:14px;
+    }
+    .movie-grid{
+        grid-template-columns: repeat(auto-fill,minmax(140px, 1fr));
+        gap:12px;
+        padding:10px;
+    }
+    .movie-card img{
+        height:180px;
+    }
+    .modal-content{
+        padding:10px;
+    }
+    .modal-content img{
+        float: none;
+        display: block;
+        margin: 0 auto 15px auto;
+        width:80%;
+        max-width: 220px;
+    }
+}
